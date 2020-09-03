@@ -28,6 +28,8 @@ public class Ventana extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
+        txtIter = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         areaDatos = new javax.swing.JTextArea();
@@ -77,6 +79,10 @@ public class Ventana extends javax.swing.JFrame {
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Método Bisección");
         jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 410, -1));
+        jPanel2.add(txtIter, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 40, 60, -1));
+
+        jLabel5.setText("Iteraciones");
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 40, -1, -1));
 
         jPanel3.setBackground(new java.awt.Color(0, 204, 153));
 
@@ -91,8 +97,8 @@ public class Ventana extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1)
-                .addContainerGap())
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 864, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -106,7 +112,7 @@ public class Ventana extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 704, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
@@ -149,6 +155,8 @@ public class Ventana extends javax.swing.JFrame {
         String b = txtB.getText();
         String f = txtFun.getText();
         
+        int iter = Cast.toInteger(txtIter.getText());
+        
         System.out.println(a + " " + b);
         
         double A = Cast.toDouble(a);
@@ -156,7 +164,7 @@ public class Ventana extends javax.swing.JFrame {
         
         funciones = new CalcularBiseccion(f, A, B);
         
-        funciones.calcular(60);
+        funciones.calcular(iter);
         areaDatos.setText(funciones.getCadenaIteraciones());
         
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -170,6 +178,7 @@ public class Ventana extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -177,5 +186,6 @@ public class Ventana extends javax.swing.JFrame {
     private javax.swing.JTextField txtA;
     private javax.swing.JTextField txtB;
     private javax.swing.JTextField txtFun;
+    private javax.swing.JTextField txtIter;
     // End of variables declaration//GEN-END:variables
 }

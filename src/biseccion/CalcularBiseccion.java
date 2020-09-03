@@ -72,9 +72,13 @@ public class CalcularBiseccion {
                 + "\tf(a)"
                 + "\tf(b)"
                 + "\txi"
-                + "\tf(xi)\n";
+                + "\tf(xi)"
+                + "\t|xi-(xi-1)|\n";
         if (f(a) * f(b) < 0) {
-
+            
+            double xri = 0;
+            double xr = 0;
+            
             while (incremento <= cont) {
                 msg += incremento + "\t";
 
@@ -82,7 +86,10 @@ public class CalcularBiseccion {
                 Paso 2: Una aproximación de la raíz xr se determina mediante:
                 xr = xl + xu / 2
                  */
-                double xr = (a + b) / 2;
+                
+                
+                xri = xr;
+                xr = (a + b) / 2;
                 
                 //msg += cortar(a+"") + "+" + cortar(b+"") + "/" + 2 + "\t"; // xr = xl + xu / 2
                 
@@ -97,6 +104,10 @@ public class CalcularBiseccion {
                 msg += cortar(xr+"") + "\t"; // xi
                 
                 msg += cortar(f(xr)+"") + "\t"; // f(xi)
+                
+                if (incremento > 1) {
+                    msg += cortar(Math.abs(xr-xri)+"") + "\t"; // |xi - xi-1|
+                }
 
                 /*
                 Paso 3: Realice las siguientes evaluaciones para determinar en qué subintervalo está la raíz:
