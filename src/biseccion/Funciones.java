@@ -2,6 +2,10 @@ package biseccion;
 
 import org.nfunk.jep.JEP;
 
+/**
+ *
+ * @author Dair Salas Grandeth
+ */
 public class Funciones {
     
     private String funcion;

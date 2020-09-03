@@ -2,7 +2,7 @@ package biseccion;
 
 /**
  *
- * @author dair
+ * @author Dair Salas Grandeth
  */
 public class Cast {
     

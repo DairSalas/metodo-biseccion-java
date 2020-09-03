@@ -4,7 +4,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Lady Diane
+ * @author Dair Salas Grandeth
  */
 public class Alerts {
     
